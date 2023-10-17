@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.imusicweb.dao.SongListCommentMapper">
+    <resultMap id="BaseResultMap" type="com.example.imusicweb.database.SongListComment" >
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="song_list_id" jdbcType="INTEGER" property="songListId"/>
+        <result column="comment" jdbcType="VARCHAR" property="comment"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,song_list_id,comment
+    </sql>
+
+    <insert id="insert" parameterType="com.example.imusicweb.database.SongListComment">
+        insert into song_list_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="songListId != null">
+                song_list_id,
+            </if>
+            <if test="comment != null">
+                comment,
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="songListId != null">
+                #{songListId},
+            </if>
+            <if test="comment != null">
+                #{comment},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="allComment" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from song_list_comment where song_list_id = #{songListId} order by id desc
+    </select>
+</mapper>

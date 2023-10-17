@@ -1,0 +1,62 @@
+@import "var.scss";
+@import "global.scss";
+
+.song-list {
+  margin: 30px 150px;
+  margin-top: $header-height + 20px;
+  padding-bottom: 150px;
+  min-width: 800px;
+  border-radius: 15px;
+  background-color: #afb79c;
+  color: #fff;
+
+  .pagination {
+    display: flex;
+    justify-content: center; /* 添加justify-content属性，使翻页控件水平居中 */
+    margin-top: 20px; /* 添加顶部间距，使翻页控件与内容有一定的间隔 */
+    color: #c4ceb3 !important;
+    border-color: #c4ceb3 !important;
+  }
+
+  .el-pagination .el-pager {
+    background-color: #ff0000; /* 修改按钮背景颜色 */
+    color: #ffffff; /* 修改按钮文字颜色 */
+    border-color: #ff0000; /* 修改按钮边框颜色 */
+    border-radius: 50%; /* 修改按钮圆角 */
+    width: 30px; /* 修改按钮宽度 */
+    height: 30px; /* 修改按钮高度 */
+    line-height: 30px; /* 修改按钮内文字的行高 */
+    font-size: 14px; /* 修改按钮文字大小 */
+  }
+
+  .el-pagination .el-pager.is-current {
+    background-color: #c4ceb3; /* 修改当前页按钮背景颜色 */
+    color: #ffffff !important; /* 修改当前页按钮文字颜色 */
+    border-color: #c4ceb3; /* 修改当前页按钮边框颜色 */
+  }
+}
+
+.song-list-header {
+  width: 100%;
+  padding: 0 40px;
+  li {
+    display: inline-block;
+    line-height: 40px;
+    margin: 40px 20px 15px 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: $color-grey;
+    border-bottom: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  li.active {
+    color: #c4ceb3;
+    font-weight: 600;
+    border-bottom: 4px solid #c4ceb3;
+  }
+}
+
+.pagination {
+  @include layout;
+}

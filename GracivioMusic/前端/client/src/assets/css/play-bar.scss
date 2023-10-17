@@ -1,0 +1,131 @@
+@import "var.scss";
+@import "global.scss";
+
+.play-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s;
+  border-radius: 15px;
+  color: #fff;
+  @include box-shadow($box-shadow);
+
+  .item-up {
+    position: absolute;
+    bottom: $play-bar-height + 10px;
+    left: 20px;
+    cursor: pointer;
+  }
+
+  .kongjian {
+    @include layout(center, center);
+    bottom: 0;
+    height: $play-bar-height + 10px;
+    width: 100%;
+    min-width: 1000px;
+    border-radius: 15px;
+    background-color: #848c74;
+
+    .item {
+      position: relative;
+      width: 80px;
+      height: 50px;
+      line-height: 60px;
+      fill: white;
+      text-align: center;
+      cursor: pointer;
+      .icon.active {
+        color: red !important;
+      }
+      .volume {
+        position: absolute;
+        display: none;
+        height: 100px;
+        top: -($play-bar-height + 50px);
+        right: 22px;
+      }
+      .show-volume {
+        display: block;
+      }
+    }
+
+    .item-img {
+      width: $play-bar-height +5px;
+      height: $play-bar-height +5px;
+      border-radius: 20px;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.playing-speed {
+  // 进度条
+  height: 50px;
+  width: 600px;
+  @include layout(center, center);
+
+  .current-time,
+  .left-time {
+    width: 70px;
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    top: -10px;
+  }
+
+  .progress-box {
+    flex: 1;
+    .item-song-title {
+      @include layout(space-between);
+      height: 20px;
+      line-height: 10px;
+    }
+    .progress {
+      width: 100%;
+      background: #afb79c;
+      height: 6px;
+      .bg {
+        height: 100%;
+        .cur-progress {
+          height: 100%;
+          background: #ecebd6;
+        }
+      }
+      .idot {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        border-radius: 50%;
+        background-color: #fff;
+        top: -11px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.turn {
+  transform: rotate(180deg);
+}
+
+.show {
+  bottom: -($play-bar-height);
+}
+
+.icon {
+  @include icon(1.2em, #fff);
+}
+
+.comment{
+  margin-left: 24px;
+  margin-top: 3px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+

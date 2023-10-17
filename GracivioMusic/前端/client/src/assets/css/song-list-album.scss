@@ -1,0 +1,120 @@
+@import "var.scss";
+
+/*歌单背景*/
+.song-list-album {
+  margin-top: $header-height;
+  padding-top: 150px;
+  margin-bottom: 90px;
+  background-color: #848c74;
+}
+
+/*歌单左侧*/
+.album-slide {
+  float: left;
+  width: 500px;
+  color: #fff !important;
+
+  /*歌单图像*/
+  .album-img {
+    margin-left: 90px;
+    margin-top: 150px;
+    position: relative;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    top: -100px;
+    left: 50px;
+    border-radius: 10%;
+    overflow: hidden;
+    border: 5px solid $color-white;
+    background-color: $color-white;
+    img {
+      width: 100%;
+    }
+  }
+
+  /*歌单信息*/
+  .album-info {
+    color: #fff !important;;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: -90px;
+    text-align: center;
+    margin-left: 90px;
+    span {
+      position: absolute;
+      color: #fff;
+      margin-left: -285px;
+      width: 280px
+    }
+  }
+}
+
+/*歌单内容*/
+.album-content {
+  margin-top: -50px;
+  margin-left: 480px;
+  margin-right: -20px;
+  margin-bottom: 200px;
+  font-size: 16px;
+  padding: 40px 100px;
+  /*歌单题目*/
+  .album-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #afb79c !important;
+  }
+
+
+  /*歌曲列表*/
+  .songs-body {
+    background-color: $color-white;
+    border-radius: 12px;
+    padding: 0 40px 50px 40px;
+    min-width: 700px;
+    color: #848c74 !important;
+  }
+}
+
+.comment-icon{
+  height: 100px;
+  width: 100px;
+  left: 0;
+  cursor: pointer;
+  margin-top: 70px;
+  margin-left: -400px;
+}
+
+.danmu-container{
+  position: fixed;
+  height: 520px;
+  margin-left: -180px;
+  width: 40%;
+  padding: 5px;
+  border-radius: 20px;
+  background-color:rgba(255, 255, 255, 0);
+  margin-top: -440px;
+  overflow: hidden;
+  color: #fff;
+}
+.danmu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:40px;
+  width: 250px;
+  border-radius: 15px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: danmuScroll 8s linear forwards;
+}
+
+@keyframes danmuScroll {
+  0% {
+    transform: translateX(200%); /* 弹幕起始位置在容器的右侧 */
+  }
+  100% {
+    transform: translateX(-160%); /* 弹幕结束位置在容器的左侧 */
+  }
+}
